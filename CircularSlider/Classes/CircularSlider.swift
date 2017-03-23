@@ -32,6 +32,7 @@ open class CircularSlider: UIView {
         }
     }
     @IBOutlet fileprivate weak var divisaLabel: UILabel!
+    @IBOutlet fileprivate weak var bottomLine: UIView!
     
     
     // MARK: - properties
@@ -161,6 +162,12 @@ open class CircularSlider: UIView {
     open var hideLabels: Bool = false {
         didSet {
             setLabelsHidden(self.hideLabels)
+        }
+    }
+    @IBInspectable
+    open var hideBottomLine: Bool = false {
+        didSet {
+            setBottomLineHidden(self.hideBottomLine)
         }
     }
     @IBInspectable
@@ -372,6 +379,10 @@ open class CircularSlider: UIView {
     
     fileprivate func setLabelsHidden(_ isHidden: Bool) {
         centeredView.isHidden = isHidden
+    }
+    
+    fileprivate func setBottomLineHidden(_ isHidden: Bool) {
+        bottomLine.isHidden = isHidden
     }
     
     fileprivate func updateLabels() {
